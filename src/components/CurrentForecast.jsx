@@ -7,7 +7,6 @@ const API_KEY = '4d58d6f0a435bf7c5a52e2030f17682d';
 export const CurrentForecast = () => {
     const [query, setQuery] = useState('');
     const [hours, setHours] = useState([]);
-    const [weather, setWeather] = useState({});
 
     const search = async (e) => {
         if(e.key === 'Enter') {
@@ -29,7 +28,6 @@ export const CurrentForecast = () => {
             // Looper unikke datoer og bygger array med timer fordelt på dage
             const arrHours = arrDays.map((day) => { return data.list.filter((item) => (item.dt_txt.substring(8,10) === day))})
             
-            setWeather(data);
             setHours(arrHours);
         }
       }  
